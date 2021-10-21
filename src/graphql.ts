@@ -46,3 +46,15 @@ export const USER_ID_QUERY = gql`
     }
   }
 `;
+
+export const SEND_MESSAGE_MUTATION = gql`
+  mutation Mutation($message: String!) {
+    sendMessage(message: $message) {
+      id
+      from
+      to
+      channel
+      message
+    }
+  }
+`;
