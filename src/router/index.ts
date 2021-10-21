@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import SignUp from '../components/SignUp.vue';
 import LogIn from '../components/LogIn.vue';
 import Users from '../components/admin/Users.vue';
+import UserDetails from '../components/admin/UserDetails.vue';
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,12 @@ const routes: Array<RouteConfig> = [
     path: '/admin/users',
     name: 'Users',
     component: Users,
+  },
+  {
+    path: '/admin/users/:id',
+    name: 'UserDetails',
+    component: UserDetails,
+    props: true,
   },
   {
     path: '/about',

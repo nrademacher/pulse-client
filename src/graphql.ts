@@ -24,3 +24,25 @@ export const USER_ROLE_QUERY = gql`
     }
   }
 `;
+
+export const USER_ID_QUERY = gql`
+  query Query($id: String!) {
+    getUserById(id: $id) {
+      id
+      email
+      cc
+      name
+      bio
+      role
+      teams {
+        name
+      }
+      projects {
+        name
+      }
+      projectsOwned {
+        name
+      }
+    }
+  }
+`;

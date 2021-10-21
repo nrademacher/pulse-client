@@ -54,9 +54,8 @@ export default class Users extends Vue {
     this.allUsers = response.data.getUsersByRole;
   }
 
-  async mounted() {
+  protected async mounted() {
     await this.getUsersByRole();
-    console.log(this.allUsers);
   }
 }
 </script>
