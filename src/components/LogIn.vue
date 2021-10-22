@@ -33,13 +33,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { LOGIN_QUERY } from "../graphql";
+import { Component, Vue } from 'vue-property-decorator';
+import { LOGIN_QUERY } from '../graphql';
 
 @Component
 export default class LogIn extends Vue {
-  private email = "";
-  private password = "";
+  private email = '';
+  private password = '';
 
   private async login() {
     const { data } = await this.$apollo.query({
@@ -47,9 +47,9 @@ export default class LogIn extends Vue {
       variables: { email: this.email, password: this.password },
     });
 
-    localStorage.setItem("itemize-user-token", `Bearer ${data.login}`);
+    localStorage.setItem('itemize-user-token', `Bearer ${data.login}`);
 
-    this.$router.replace("/admin/posts");
+    this.$router.replace('/admin/posts');
   }
 }
 </script>

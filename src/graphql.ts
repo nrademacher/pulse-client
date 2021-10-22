@@ -47,11 +47,30 @@ export const USER_ID_QUERY = gql`
   }
 `;
 
-export const SEND_MESSAGE_MUTATION = gql`
-  mutation Mutation($message: String!) {
-    sendMessage(message: $message) {
+export const GET_USER_CHATS_QUERY = gql`
+  query Query {
+    getOwnChats {
       id
       from
+      to
+      channel
+      message
+    }
+  }
+`;
+
+export const SEND_MESSAGE_MUTATION = gql`
+  mutation Mutation(
+    $message: String!
+    $recipientEmail: String
+    $channel: ChatChannels
+  ) {
+    sendMessage(
+      message: $message
+      recipientEmail: $recipientEmail
+      channel: $channel
+    ) {
+      id
       to
       channel
       message

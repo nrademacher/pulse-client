@@ -5,6 +5,7 @@ import SignUp from '../components/SignUp.vue';
 import LogIn from '../components/LogIn.vue';
 import Users from '../components/admin/Users.vue';
 import UserDetails from '../components/admin/UserDetails.vue';
+import AddMessage from '../components/admin/AddMessage.vue';
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,11 @@ const routes: Array<RouteConfig> = [
     name: 'UserDetails',
     component: UserDetails,
     props: true,
+  },
+  {
+    path: '/admin/messages/new',
+    name: 'AddMessage',
+    component: AddMessage,
   },
   {
     path: '/about',

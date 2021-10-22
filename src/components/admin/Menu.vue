@@ -1,12 +1,12 @@
 <template>
   <aside class="menu">
-    <p class="menu-label">Post</p>
+    <p class="menu-label">Message</p>
     <ul class="menu-list">
       <li>
-        <router-link to="/admin/posts/new">New Post</router-link>
+        <router-link to="/admin/messages/new">New Message</router-link>
       </li>
       <li>
-        <router-link to="/admin/posts">Posts</router-link>
+        <router-link to="/admin/messages">Messages</router-link>
       </li>
     </ul>
     <p class="menu-label">User</p>
