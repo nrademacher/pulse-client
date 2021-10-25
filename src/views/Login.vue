@@ -19,7 +19,7 @@
       <h1 class="logo-composite__subtitle">PULSE</h1>
     </div>
     <div
-      class="text-muted text-center mb-4 font-normal"
+      class="text-muted text-center mb-4 font-italic"
       style="font-weight: 300; font-size: 0.75rem"
     >
       The collaboration and networking platform for Itemikers.
@@ -53,7 +53,9 @@ export default {
   &__divider {
     height: 4rem;
     margin: 0 2rem;
-    border-left: 1px solid #adb5bd;
+    border-left-width: 1px;
+    border-style: solid;
+    border-color: var(--itemis-nav-dark-border);
   }
 
   &__logo {
@@ -64,9 +66,9 @@ export default {
   }
 
   &__subtitle {
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.25em;
     font-size: 3rem;
-    font-weight: 100;
+    font-weight: 200;
     line-height: 0;
   }
 }

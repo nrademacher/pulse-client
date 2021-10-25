@@ -1,31 +1,49 @@
 <template>
-  <div class="mt-5 d-flex w-100 justify-content-center align-items-center">
-    <div class="" style="width: 20%">
-      <h2 class="text-center">Login</h2>
+  <section class="form-container mb-4 pb-5">
+    <div class="signin-form rounded p-4 my-3 mt-4" style="">
+      <b-form @submit.prevent="login" @reset="onReset">
+        <b-form-group
+          id="input-group-1"
+          label="Username or email"
+          label-for="input-1"
+          label-size="sm"
+          label-class="mb-1"
+          style="font-weight: 600"
+        >
+          <b-form-input
+            id="input-1"
+            v-model="email"
+            type="email"
+            required
+          ></b-form-input>
+        </b-form-group>
 
-      <form method="POST" @submit.prevent="login">
-        <div class="">
-          <label class="">E-Mail Address</label>
+        <b-form-group
+          id="input-group-2"
+          label="Password"
+          label-for="input-2"
+          label-size="sm"
+          label-class="mb-2"
+          style="font-weight: 600"
+        >
+          <b-form-input
+            id="input-2"
+            v-model="password"
+            type="password"
+            required
+          ></b-form-input>
+        </b-form-group>
 
-          <p class="">
-            <input type="email" class="input" v-model="email" />
-          </p>
-        </div>
-
-        <div class="">
-          <label class="">Password</label>
-
-          <p class="">
-            <input type="password" class="input" v-model="password" />
-          </p>
-        </div>
-
-        <p class="mt-3">
-          <button class="btn btn-primary w-100">Login</button>
-        </p>
-      </form>
+        <b-button
+          type="submit"
+          class="w-100"
+          style="font-weight: 600"
+          variant="primary"
+          >Sign In</b-button
+        >
+      </b-form>
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">
@@ -51,4 +69,15 @@ export default class SignInForm extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.form-container {
+  width: 20rem;
+}
+
+.signin-form {
+  max-width: calc(100vw - 2rem);
+  border: 1px solid var(--itemis-nav-dark-border);
+  background: var(--itemis-nav-dark);
+  font-size: 0.875rem;
+}
+</style>
