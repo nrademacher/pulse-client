@@ -13,8 +13,8 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   const token = Cookies.get('pulse-user-token');
 
-  if (to.name !== 'LogIn' && !token) {
-    next({ name: 'LogIn' });
+  if (to.name !== 'Login' && !token) {
+    next({ name: 'Login' });
   } else next();
 
   if (to.name === 'SignUp' && token) {
