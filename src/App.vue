@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-navbar class="navbar" toggleable="sm" sticky>
+    <b-navbar v-if="authed" class="navbar" toggleable="sm" sticky>
       <div class="align-self-center" href="#">Pulse</div>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -27,9 +27,23 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: 'app',
-};
+import { Component, Vue } from 'vue-property-decorator';
+import Cookies from 'js-cookie';
+
+@Component
+export default class App extends Vue {
+  public loggedIn = false;
+
+  protected mounted() {
+    const token = Cookies.get('pulse-user-token');
+
+    if (token) {
+      this.loggedIn = true;
+    } else {
+      this.loggedIn = false;
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

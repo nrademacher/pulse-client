@@ -1,7 +1,7 @@
 import { RouteConfig } from 'vue-router';
 
 import SignUp from '../components/SignUp.vue';
-import LogIn from '../components/LogIn.vue';
+import Login from '../views/Login.vue';
 import Users from '../components/user/Users.vue';
 import UserDetails from '../components/user/UserDetails.vue';
 import AddMessage from '../components/user/AddMessage.vue';
@@ -22,8 +22,8 @@ export const routes: RouteConfig[] = [
   },
   {
     path: '/login',
-    name: 'LogIn',
-    component: LogIn,
+    name: 'Login',
+    component: Login,
   },
   {
     path: '/users',
