@@ -22,6 +22,18 @@
             </div>
 
             <div class="field">
+              <label class="label">Recipient Email</label>
+
+              <p class="control">
+                <input
+                  class="input"
+                  v-model="recipientEmail"
+                  placeholder="Chat channel"
+                />
+              </p>
+            </div>
+
+            <div class="field">
               <label class="label">Content</label>
 
               <p class="control">
@@ -47,7 +59,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Menu from './Menu.vue';
-import { SEND_MESSAGE_MUTATION } from '../../graphql';
+import { SEND_MESSAGE_MUTATION } from '@/graphql';
 
 @Component({
   components: { Menu },
@@ -57,7 +69,7 @@ export default class AddMessage extends Vue {
   private recipientEmail = '';
   private channel = '';
 
-  private async addMessage() {
+  public async addMessage() {
     await this.$apollo.mutate({
       mutation: SEND_MESSAGE_MUTATION,
       variables: {
@@ -67,7 +79,7 @@ export default class AddMessage extends Vue {
       },
     });
 
-    this.$router.replace('/admin/messages');
+    this.$router.replace('/user/messages');
   }
 }
 </script>

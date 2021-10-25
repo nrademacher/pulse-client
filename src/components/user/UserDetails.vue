@@ -61,17 +61,16 @@ import { USER_ID_QUERY } from '../../graphql';
   components: { Menu },
 })
 export default class UserDetails extends Vue {
-  private user = {};
+  public user = {};
   private id = this.$route.params.id;
 
   private async getUserById() {
-    console.log(this.id);
     const { data } = await this.$apollo.query({
       query: USER_ID_QUERY,
       variables: { id: this.id },
     });
 
-    this.user = data.getUserById;
+    this.user = data.userById;
   }
 
   protected async mounted() {

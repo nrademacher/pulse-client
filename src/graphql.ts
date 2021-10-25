@@ -18,7 +18,7 @@ export const LOGIN_QUERY = gql`
 
 export const USER_ROLE_QUERY = gql`
   query Query($role: UserRoles!) {
-    getUsersByRole(role: $role) {
+    usersByRole(role: $role) {
       email
       id
     }
@@ -27,7 +27,7 @@ export const USER_ROLE_QUERY = gql`
 
 export const USER_ID_QUERY = gql`
   query Query($id: String!) {
-    getUserById(id: $id) {
+    userById(id: $id) {
       id
       email
       cc
@@ -47,14 +47,68 @@ export const USER_ID_QUERY = gql`
   }
 `;
 
-export const GET_USER_CHATS_QUERY = gql`
+export const ALL_USERS_CHATS_QUERY = gql`
   query Query {
-    getOwnChats {
+    allChats {
       id
-      from
-      to
       channel
       message
+      from {
+        email
+      }
+    }
+  }
+`;
+
+export const GET_USER_CHATS_QUERY = gql`
+  query Query {
+    ownChats {
+      id
+      channel
+      message
+      from {
+        id
+        email
+      }
+      to {
+        id
+        email
+      }
+    }
+  }
+`;
+
+export const PUBLIC_MESSAGES_SUBSCRIPTION = gql`
+  subscription Subscription {
+    subscribeToChannel {
+      id
+      channel
+      message
+      from {
+        id
+        email
+      }
+      to {
+        id
+        email
+      }
+    }
+  }
+`;
+
+export const MESSAGE_QUERY = gql`
+  query Query($id: String!) {
+    message(id: $id) {
+      id
+      channel
+      message
+      from {
+        id
+        email
+      }
+      to {
+        id
+      }
     }
   }
 `;
@@ -71,7 +125,10 @@ export const SEND_MESSAGE_MUTATION = gql`
       channel: $channel
     ) {
       id
-      to
+      to {
+        id
+        email
+      }
       channel
       message
     }

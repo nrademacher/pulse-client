@@ -1,7 +1,25 @@
 // Define variable defaults
-// $body-bg: #000;
-// $body-color: #111;
+
+@import '.~open-color/open-color.scss';
+
+$itemis-dark-blue: hsl(206, 100%, 8%);
+
+$body-bg: $itemis-dark-blue;
+$body-color: $oc-gray-4;
+
+$primary: $oc-blue-7;
+$secondary: #dbe2f0;
 
 // Then import Bootstrap and BootstrapVue SCSS files (order is important)
 @import '~bootstrap/scss/bootstrap.scss';
 @import '~bootstrap-vue/src/index.scss';
+
+:root {
+  --itemis-brand-dark-bg: $itemis-dark-blue;
+  --itemis-nav-dark: hsl(206, 100%, 10%);
+  --itemis-nav-dark-border: hsl(206, 100%, 16%);
+}
+
+body {
+  min-height: 100vh;
+}

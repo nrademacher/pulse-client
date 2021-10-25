@@ -20,9 +20,7 @@
               <tr v-for="user in allUsers" :key="user.id">
                 <td>{{ user.email }}</td>
                 <td>
-                  <router-link :to="`/admin/users/${user.id}`"
-                    >View</router-link
-                  >
+                  <router-link :to="`/users/${user.id}`">View</router-link>
                 </td>
               </tr>
             </tbody>
@@ -51,7 +49,7 @@ export default class Users extends Vue {
       variables: { role: this.role },
     });
 
-    this.allUsers = response.data.getUsersByRole;
+    this.allUsers = response.data.usersByRole;
   }
 
   protected async mounted() {
