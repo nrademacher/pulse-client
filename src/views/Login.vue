@@ -30,7 +30,7 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import LogoComposite from '@/components/LogoComposite/LogoComposite.vue';
-import SignInForm from '@/components/SignInForm.vue';
+import SignInForm from '@/components/SignInForm/SignInForm.vue';
 
 @Component({
   components: {

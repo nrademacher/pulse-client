@@ -77,26 +77,5 @@ export default class SignInForm extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.form-container {
-  width: 20rem;
-}
-
-.signin-form {
-  max-width: calc(100vw - 2rem);
-  background: var(--element-bg-color);
-  border: 1px solid var(--element-border-color);
-  font-size: 0.875rem;
-}
-
-.signin-btn {
-  background-color: var(--itemis-brand-medium-blue);
-  border-color: var(--itemis-brand-medium-blue);
-  transition: all 0.2s ease;
-
-  &:hover {
-    background-color: var(--itemis-brand-medium-blue);
-    border-color: var(--itemis-brand-medium-blue);
-    filter: brightness(80%);
-  }
-}
+@import './SignInForm.scss';
 </style>

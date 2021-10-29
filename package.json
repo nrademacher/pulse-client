@@ -28,7 +28,6 @@
     "graphql-tag": "^2.12.5",
     "js-cookie": "^3.0.1",
     "open-color": "^1.9.1",
-    "particles.vue": "^2.20.0",
     "subscriptions-transport-ws": "^0.9.19",
     "vue": "2",
     "vue-apollo": "^3.0.8",

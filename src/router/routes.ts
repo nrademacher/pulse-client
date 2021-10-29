@@ -2,12 +2,12 @@ import { RouteConfig } from 'vue-router';
 
 import SignUp from '../components/SignUp.vue';
 import Login from '../views/Login.vue';
-import Users from '../components/user/Users.vue';
-import UserDetails from '../components/user/UserDetails.vue';
-import AddMessage from '../components/user/AddMessage.vue';
-import Messages from '../components/user/Messages.vue';
-import Home from '../components/Home.vue';
-import Message from '../components/Message.vue';
+import Users from '../views/user/Users.vue';
+import UserDetails from '../views/user/UserDetails.vue';
+import AddMessage from '../views/user/AddMessage.vue';
+import Messages from '../views/user/Messages.vue';
+import Home from '../views/Home.vue';
+import Message from '../views/Message.vue';
 
 export const routes: RouteConfig[] = [
   {
