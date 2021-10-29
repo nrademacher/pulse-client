@@ -23,8 +23,6 @@
   </b-navbar>
 </template>
 
-<script lang="ts"></script>
-
 <style lang="scss" scoped>
 .navbar {
   display: flex;
