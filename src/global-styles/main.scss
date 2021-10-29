@@ -1,0 +1,51 @@
+// Define variable defaults
+@import '~open-color/open-color.css';
+@import 'bootstrap-custom.scss';
+
+:root {
+  --itemis-brand-blue: hsl(207, 100%, 24%);
+  --itemis-brand-medium-blue: hsl(207, 100%, 45%);
+  --itemis-brand-light-blue: hsl(197, 100%, 44%);
+  --itemis-brand-pale-blue: hsl(207, 100%, 76%);
+  --itemis-brand-dark-blue: hsl(206, 100%, 8%);
+  --primary-color: hsl(206, 100%, 36%);
+  --secondary-color: #dbe2f0;
+  --bg-color: hsl(206, 100%, 8%);
+  --text-color: var(--oc-gray-4);
+  --element-bg-color: hsl(206, 100%, 10%);
+  --element-border-color: hsl(206, 100%, 16%);
+  --input-text-color: var(--oc-gray-4);
+  --input-bg-color: hsl(206, 100%, 12%);
+  --input-border-color: hsl(206, 100%, 16%);
+  --link-color: var(--itemis-brand-pale-blue);
+}
+
+[color-scheme='light'] {
+  --bg-color: hsl(206, 100%, 99%);
+  --text-color: var(--oc-gray-8);
+  --secondary-color: var(--itemis-brand-blue);
+  --element-bg-color: hsl(206, 100%, 100%);
+  --element-border-color: var(--oc-gray-3);
+  --input-text-color: var(--oc-gray-8);
+  --input-border-color: var(--oc-gray-3);
+  --input-bg-color: var(--oc-white);
+  --link-color: var(--itemis-brand-blue);
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  min-height: 100vh !important;
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+input {
+  border-color: var(--input-border-color) !important;
+  background-color: var(--input-bg-color) !important;
+  color: var(--input-text-color) !important;
+  font-size: inherit !important;
+}
+
+a {
+  color: var(--link-color) !important;
+}
