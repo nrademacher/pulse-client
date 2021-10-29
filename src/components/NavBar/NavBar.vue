@@ -34,14 +34,5 @@ export default class NavBar extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.navbar {
-  display: flex;
-  height: 2.5rem;
-  min-height: 40px;
-  width: 100%;
-  border-bottom: 1px solid var(--itemis-nav-dark-border);
-  background: var(--itemis-nav-dark);
-  padding: 0 1rem;
-  align-items: center;
-}
+@import 'NavBar';
 </style>

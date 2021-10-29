@@ -13,7 +13,7 @@
       class="text-muted text-center mb-4 font-italic"
       style="font-weight: 300; font-size: 0.75rem"
     >
-      The collaboration and networking platform for Itemikers.
+      <slot name="subtitle"></slot>
     </div>
   </section>
 </template>
@@ -21,31 +21,5 @@
 <script></script>
 
 <style lang="scss" scoped>
-.logo-composite {
-  margin-top: 6rem;
-  display: flex;
-  align-items: center;
-
-  &__divider {
-    height: 4rem;
-    margin: 0 2rem;
-    border-left-width: 1px;
-    border-style: solid;
-    border-color: var(--itemis-nav-dark-border);
-  }
-
-  &__logo {
-    width: 12rem;
-    max-width: 90%;
-    min-height: 54px;
-    padding-bottom: 1rem;
-  }
-
-  &__subtitle {
-    letter-spacing: 0.25em;
-    font-size: 3rem;
-    font-weight: 200;
-    line-height: 0;
-  }
-}
+@import 'LogoComposite.scss';
 </style>

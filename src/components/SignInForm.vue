@@ -56,7 +56,7 @@ export default class SignInForm extends Vue {
   private email = '';
   private password = '';
 
-  public async login() {
+  protected async login() {
     const { data } = await this.$apollo.query({
       query: LOGIN_QUERY,
       variables: { email: this.email, password: this.password },
@@ -76,8 +76,8 @@ export default class SignInForm extends Vue {
 
 .signin-form {
   max-width: calc(100vw - 2rem);
-  border: 1px solid var(--itemis-nav-dark-border);
-  background: var(--itemis-nav-dark);
+  background: var(--element-bg-color);
+  border: 1px solid var(--element-border-color);
   font-size: 0.875rem;
 }
 </style>

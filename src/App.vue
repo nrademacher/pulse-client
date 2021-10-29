@@ -8,7 +8,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Cookies from 'js-cookie';
-import NavBar from '@/components/NavBar.vue';
+import NavBar from '@/components/NavBar/NavBar.vue';
 import { useDark, useToggle } from '@vueuse/core';
 
 const isDark = useDark({

@@ -9,13 +9,17 @@
       px-3
     "
   >
-    <logo-composite></logo-composite>
+    <logo-composite>
+      <template v-slot:subtitle>
+        The collaboration and networking platform for Itemikers.
+      </template>
+    </logo-composite>
     <sign-in-form></sign-in-form>
   </section>
 </template>
 
 <script lang="ts">
-import LogoComposite from '@/components/LogoComposite.vue';
+import LogoComposite from '@/components/LogoComposite/LogoComposite.vue';
 import SignInForm from '@/components/SignInForm.vue';
 
 export default {
