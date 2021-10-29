@@ -1,7 +1,7 @@
 <template>
   <section class="form-container mb-4 pb-5">
     <div class="signin-form rounded p-4 my-3 mt-4" style="">
-      <b-form @submit.prevent="login" @reset="onReset">
+      <b-form @submit.prevent="login">
         <b-form-group
           id="input-group-1"
           label="Username or email"
