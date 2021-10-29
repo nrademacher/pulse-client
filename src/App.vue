@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <nav-bar v-if="loggedIn" :themeToggle="switchTheme"></nav-bar>
-    <router-view class="router-view" />
+    <router-view
+      :darkMode="darkMode"
+      :themeToggle="switchTheme"
+      class="router-view"
+    />
   </div>
 </template>
 
@@ -23,9 +27,11 @@ const toggleDark = useToggle(isDark);
 })
 export default class App extends Vue {
   public loggedIn = false;
+  public darkMode = isDark.value;
 
   public switchTheme() {
     toggleDark();
+    this.darkMode = !this.darkMode;
   }
 
   protected mounted() {
@@ -36,6 +42,8 @@ export default class App extends Vue {
     } else {
       this.loggedIn = false;
     }
+
+    Cookies.set('pulse-light-theme', String(isDark.value));
   }
 }
 </script>

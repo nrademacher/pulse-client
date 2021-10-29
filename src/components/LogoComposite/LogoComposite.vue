@@ -1,24 +1,30 @@
 <template>
-  <section>
-    <div class="logo-composite mb-3">
+  <header>
+    <div class="logo-composite">
       <img
         class="logo-composite__logo"
-        src="img/logos/itemis-wortmarke-weiss-rgb.svg"
-        alt=""
+        :src="`img/logos/itemis-wortmarke-${
+          darkMode ? 'weiss' : 'blau'
+        }-rgb.svg`"
+        alt="itemis Logo"
       />
       <hr class="logo-composite__divider text-muted" />
-      <h1 class="logo-composite__subtitle">PULSE</h1>
+      <h1 class="logo-composite__title">PULSE</h1>
     </div>
-    <div
-      class="text-muted text-center mb-4 font-italic"
-      style="font-weight: 300; font-size: 0.75rem"
-    >
+    <div class="logo-composite__subtitle text-muted text-center font-italic">
       <slot name="subtitle"></slot>
     </div>
-  </section>
+  </header>
 </template>
 
-<script></script>
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator';
+
+@Component
+export default class LogoComposite extends Vue {
+  @Prop() public darkMode!: boolean;
+}
+</script>
 
 <style lang="scss" scoped>
 @import 'LogoComposite.scss';

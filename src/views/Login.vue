@@ -9,25 +9,39 @@
       px-3
     "
   >
-    <logo-composite>
+    <logo-composite :darkMode="darkMode">
       <template v-slot:subtitle>
         The collaboration and networking platform for Itemikers.
       </template>
     </logo-composite>
-    <sign-in-form></sign-in-form>
+    <sign-in-form :darkMode="darkMode"></sign-in-form>
+    <p class="mb-5">
+      New to Pulse? <router-link to="/signup">Sign up</router-link>
+    </p>
+    <div class="misc-links mb-2 d-flex align-items-center flex-column small">
+      <a href="https://www.itemis.com/" class="mb-4">About itemis</a>
+      <a @click="themeToggle()" class="theme-switch mb-2">{{
+        darkMode ? 'Light theme' : 'Dark theme'
+      }}</a>
+    </div>
   </section>
 </template>
 
 <script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator';
 import LogoComposite from '@/components/LogoComposite/LogoComposite.vue';
 import SignInForm from '@/components/SignInForm.vue';
 
-export default {
+@Component({
   components: {
     LogoComposite,
     SignInForm,
   },
-};
+})
+export default class Login extends Vue {
+  @Prop() public themeToggle!: () => void;
+  @Prop() public darkMode!: boolean;
+}
 </script>
 
 <style lang="scss" scoped>
@@ -35,5 +49,9 @@ export default {
   justify-content: flex-start;
   width: 100%;
   overflow: auto;
+}
+
+.theme-switch {
+  font-size: 0.75rem;
 }
 </style>

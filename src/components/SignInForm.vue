@@ -1,15 +1,22 @@
 <template>
-  <section class="form-container mb-4 pb-5">
-    <div class="signin-form rounded p-4 my-3 mt-4" style="">
+  <section class="form-container mb-2">
+    <div class="signin-form rounded p-4 mb-1">
       <b-form @submit.prevent="login">
-        <b-form-group
-          id="input-group-1"
-          label="Username or email"
-          label-for="input-1"
-          label-size="sm"
-          label-class="mb-1"
-          style="font-weight: 600"
-        >
+        <b-form-group id="input-group-1">
+          <label
+            for="input-1"
+            class="mb-2 d-flex align-items-center"
+            style="font-weight: 600"
+          >
+            <img
+              :src="`img/logos/itemis-bildmarke-${
+                darkMode ? 'weiss' : 'schwarz'
+              }-rgb.svg`"
+              alt="itemis icon"
+              style="width: 1.25em; margin-right: 0.425em"
+            />
+            ID or email</label
+          >
           <b-form-input
             id="input-1"
             v-model="email"
@@ -23,7 +30,7 @@
           label="Password"
           label-for="input-2"
           label-size="sm"
-          label-class="mb-2"
+          label-class="mb-1"
           style="font-weight: 600"
         >
           <b-form-input
@@ -36,9 +43,8 @@
 
         <b-button
           type="submit"
-          class="w-100"
+          class="signin-btn w-100"
           style="font-weight: 600"
-          variant="primary"
           >Sign In</b-button
         >
       </b-form>
@@ -47,7 +53,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 import { LOGIN_QUERY } from '@/graphql';
 import Cookies from 'js-cookie';
 
@@ -55,6 +61,7 @@ import Cookies from 'js-cookie';
 export default class SignInForm extends Vue {
   private email = '';
   private password = '';
+  @Prop() public darkMode!: boolean;
 
   protected async login() {
     const { data } = await this.$apollo.query({
@@ -79,5 +86,17 @@ export default class SignInForm extends Vue {
   background: var(--element-bg-color);
   border: 1px solid var(--element-border-color);
   font-size: 0.875rem;
+}
+
+.signin-btn {
+  background-color: var(--itemis-brand-medium-blue);
+  border-color: var(--itemis-brand-medium-blue);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--itemis-brand-medium-blue);
+    border-color: var(--itemis-brand-medium-blue);
+    filter: brightness(80%);
+  }
 }
 </style>
