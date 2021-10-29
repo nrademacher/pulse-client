@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav-bar v-if="loggedIn"></nav-bar>
+    <nav-bar v-if="loggedIn" :themeToggle="switchTheme"></nav-bar>
     <router-view class="router-view" />
   </div>
 </template>
@@ -9,12 +9,24 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Cookies from 'js-cookie';
 import NavBar from '@/components/NavBar.vue';
+import { useDark, useToggle } from '@vueuse/core';
+
+const isDark = useDark({
+  attribute: 'color-scheme',
+  valueDark: 'dark',
+  valueLight: 'light',
+});
+const toggleDark = useToggle(isDark);
 
 @Component({
   components: { NavBar },
 })
 export default class App extends Vue {
   public loggedIn = false;
+
+  public switchTheme() {
+    toggleDark();
+  }
 
   protected mounted() {
     const token = Cookies.get('pulse-user-token');

@@ -12,16 +12,26 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto align-items-baseline">
-        <div>
-          <a href="/login" class="btn btn-sm btn-outline-secondary mr-1"
+        <a @click="themeToggle()" class="small mr-3">Toggle theme</a>
+        <div class="d-flex align-items-baseline">
+          <a href="/login" class="btn btn-sm btn-outline-secondary mr-2"
             >Log In</a
           >
-          <a>Sign Up</a>
+          <a class="small">Sign Up</a>
         </div>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </template>
+
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator';
+
+@Component
+export default class NavBar extends Vue {
+  @Prop() public themeToggle!: () => void;
+}
+</script>
 
 <style lang="scss" scoped>
 .navbar {
