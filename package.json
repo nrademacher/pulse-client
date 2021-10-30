@@ -9,7 +9,7 @@
     "test:unit": "jest",
     "test:e2e": "cypress run",
     "lint": "eslint src --fix",
-    "bootstrap4-sass-compat-shim": "sass-migrator division **/*.scss && file-ops fnr 'math.div' 'list.slash' node_modules/bootstrap/scss/mixins/_forms.scss && file-ops prepend '@use \"sass:list\";\n' -u node_modules/bootstrap/scss/mixins/_forms.scss",
+    "bootstrap4-sass-compat-shim": "sass-migrator division **/*.scss && file-ops fnr 'math.div' 'list.slash' -s node_modules/bootstrap/scss/mixins/_forms.scss && file-ops prepend '@use \"sass:list\";\n' -s -u node_modules/bootstrap/scss/mixins/_forms.scss",
     "postinstall": "yarn bootstrap4-sass-compat-shim"
   },
   "dependencies": {
@@ -39,7 +39,7 @@
     "vue-server-renderer": "^2.6.14"
   },
   "devDependencies": {
-    "@nrademacher/file-ops-cli": "^0.6.7",
+    "@nrademacher/file-ops-cli": "^0.6.8",
     "@types/jest": "^27.0.2",
     "@types/js-cookie": "^3.0.0",
     "@types/node": "^16.11.6",
