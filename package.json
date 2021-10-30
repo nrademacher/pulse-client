@@ -8,7 +8,9 @@
     "build": "vue-tsc --noEmit && vite build",
     "test:unit": "jest",
     "test:e2e": "cypress run",
-    "lint": "eslint src --fix"
+    "lint": "eslint src --fix",
+    "bootstrap4-sass-compat-shim": "sass-migrator division **/*.scss && file-ops fnr 'math.div' 'list.slash' node_modules/bootstrap/scss/mixins/_forms.scss && file-ops prepend '@use \"sass:list\";\n' node_modules/bootstrap/scss/mixins/_forms.scss",
+    "postinstall": "yarn bootstrap4-sass-compat-shim"
   },
   "dependencies": {
     "@apollo/client": "^3.4.16",
@@ -22,7 +24,7 @@
     "apollo-link-http": "^1.5.17",
     "apollo-link-ws": "^1.0.20",
     "apollo-utilities": "^1.3.4",
-    "bootstrap": "^4.6.0",
+    "bootstrap": ">=4.5.3 <5.0.0",
     "bootstrap-vue": "^2.21.2",
     "graphql": "^15.6.1",
     "graphql-tag": "^2.12.5",
@@ -34,10 +36,10 @@
     "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.2.0",
-    "vue-router-layout": "^0.4.0",
     "vue-server-renderer": "^2.6.14"
   },
   "devDependencies": {
+    "@nrademacher/file-ops-cli": "^2.5.5",
     "@types/jest": "^27.0.2",
     "@types/js-cookie": "^3.0.0",
     "@types/node": "^16.11.6",
@@ -55,7 +57,8 @@
     "eslint-plugin-vue": "^7.6.0",
     "jest": "^27.1.0",
     "prettier": "^2.2.1",
-    "sass": "^1.32.13",
+    "sass": "^1.32.12",
+    "sass-migrator": "^1.5.2",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4",
