@@ -31,7 +31,7 @@ import { MESSAGE_QUERY } from '@/graphql';
   },
 })
 export default class Message extends Vue {
-  public message = '';
+  public message: { message: string } = { message: '' };
   public id = this.$route.params.id;
 }
 </script>

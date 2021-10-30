@@ -41,7 +41,7 @@ import { USER_ROLE_QUERY } from '../../graphql';
 })
 export default class Users extends Vue {
   private role = 'SOFTWARE_DEVELOPER';
-  private allUsers = [];
+  public allUsers: any[] = [];
 
   private async getUsersByRole() {
     const response = await this.$apollo.query({

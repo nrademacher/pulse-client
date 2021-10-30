@@ -4,7 +4,6 @@ import App from './App.vue';
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue';
 
 import router from './router';
-
 import { apolloProvider } from './apollo-client';
 
 import './global-styles/main.scss';

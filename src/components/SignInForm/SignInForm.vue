@@ -59,11 +59,11 @@ import Cookies from 'js-cookie';
 
 @Component
 export default class SignInForm extends Vue {
-  private email = '';
-  private password = '';
+  public email = '';
+  public password = '';
   @Prop() public darkMode!: boolean;
 
-  protected async login() {
+  public async login() {
     const { data } = await this.$apollo.query({
       query: LOGIN_QUERY,
       variables: { email: this.email, password: this.password },

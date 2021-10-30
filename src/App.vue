@@ -29,7 +29,7 @@ export default class App extends Vue {
   public loggedIn = false;
   public darkMode = isDark.value;
 
-  protected switchTheme() {
+  public switchTheme() {
     toggleDark();
     this.darkMode = !this.darkMode;
   }
