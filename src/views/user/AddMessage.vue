@@ -65,9 +65,9 @@ import { SEND_MESSAGE_MUTATION } from '@/graphql';
   components: { Menu },
 })
 export default class AddMessage extends Vue {
-  private message = '';
-  private recipientEmail = '';
-  private channel = '';
+  public message = '';
+  public recipientEmail = '';
+  public channel = '';
 
   public async addMessage() {
     await this.$apollo.mutate({

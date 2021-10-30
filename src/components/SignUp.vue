@@ -43,11 +43,11 @@ import { SIGNUP_MUTATION } from '../graphql';
 
 @Component
 export default class SignUp extends Vue {
-  private email = '';
-  private password = '';
-  private cc = '';
+  public email = '';
+  public password = '';
+  public cc = '';
 
-  private async signUp() {
+  public async signUp() {
     await this.$apollo.mutate({
       mutation: SIGNUP_MUTATION,
       variables: { email: this.email, password: this.password, cc: this.cc },

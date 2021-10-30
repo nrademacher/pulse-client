@@ -10,10 +10,10 @@
 </template>
 
 <script lang="ts">
+import { useDark, useToggle } from '@vueuse/core';
 import { Component, Vue } from 'vue-property-decorator';
 import Cookies from 'js-cookie';
 import NavBar from '@/components/NavBar/NavBar.vue';
-import { useDark, useToggle } from '@vueuse/core';
 
 const isDark = useDark({
   attribute: 'color-scheme',
@@ -42,8 +42,6 @@ export default class App extends Vue {
     } else {
       this.loggedIn = false;
     }
-
-    Cookies.set('pulse-light-theme', String(isDark.value));
   }
 }
 </script>
